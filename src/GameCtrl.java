@@ -60,6 +60,7 @@ public class GameCtrl
 		System.out.println("What kind of " + s + " do you want?");
 		System.out.println("  1 - Human");
 		System.out.println("  2 - Computer");
+		System.out.println("  3 - Computer Random guesser");
 
 		System.out.print("Enter your choice: ");
 		while(true)
@@ -73,6 +74,10 @@ public class GameCtrl
 			{
 				return 2;
 			}
+			if("3".equals(answer))
+			{
+				return 3;
+			}
 			System.out.print("Try again: ");
 		}
 	}
@@ -80,9 +85,27 @@ public class GameCtrl
 	public static void main(String[] args)
 	{
 		IThinker thinker = chooseType("Thinker") == 1 ? new HumanThinker() : new ComputerThinker();
-		IGuesser guesser = chooseType("Guesser") == 1 ? new HumanGuesser() : new ComputerGuesser();
+		// IGuesser guesser = chooseType("Guesser") == 1 ? new HumanGuesser() : new ComputerGuesser();
 
-		GameCtrl gc = new GameCtrl(0, 100);
+		// switch case for all the there guessers
+		IGuesser guesser;
+		switch(chooseType("Guesser"))
+		{
+			case 1:
+				guesser = new HumanGuesser();
+				break;
+			case 2:
+				guesser = new ComputerGuesser();
+				break;
+			case 3:
+				guesser = new ComputerGuesserRandom();
+				break;
+			default:
+				guesser = (IGuesser) new RuntimeException("This should never happen!");
+				break;
+		}
+
+		GameCtrl gc = new GameCtrl(1, 100);
 		gc.runGame(thinker, guesser);
 	}
 }

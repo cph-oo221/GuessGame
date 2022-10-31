@@ -26,7 +26,7 @@ public class ComputerGuesserRandom implements IGuesser
     @Override
     public int makeGuess()
     {
-        guess = rand.nextInt(min - max + 1) - min;
+        guess = rand.nextInt(max - min + 1) + min;
         return guess;
     }
 

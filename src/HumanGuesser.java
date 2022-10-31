@@ -50,5 +50,4 @@ public class HumanGuesser extends AHumanPlayer implements IGuesser
 				+ opponent + "'s secret number.");
 		return playAgain();
 	}
-
 }
