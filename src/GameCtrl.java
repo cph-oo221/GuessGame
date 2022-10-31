@@ -19,6 +19,8 @@ public class GameCtrl
 		System.out.print("Guesser");
 		String guesserName = guesser.getName();
 
+
+
 		boolean thinkerPlayAgain;
 		boolean guesserPlayAgain;
 		do
@@ -58,6 +60,7 @@ public class GameCtrl
 		System.out.println("What kind of " + s + " do you want?");
 		System.out.println("  1 - Human");
 		System.out.println("  2 - Computer");
+
 		System.out.print("Enter your choice: ");
 		while(true)
 		{
@@ -78,6 +81,7 @@ public class GameCtrl
 	{
 		IThinker thinker = chooseType("Thinker") == 1 ? new HumanThinker() : new ComputerThinker();
 		IGuesser guesser = chooseType("Guesser") == 1 ? new HumanGuesser() : new ComputerGuesser();
+
 		GameCtrl gc = new GameCtrl(0, 100);
 		gc.runGame(thinker, guesser);
 	}
