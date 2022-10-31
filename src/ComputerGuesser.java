@@ -2,7 +2,7 @@ public class ComputerGuesser implements IGuesser
 {
 	private int min;
 	private int max;
-	
+
 	public void yourTurn() {}
 
 	public String getName()
