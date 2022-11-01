@@ -4,7 +4,7 @@ public class ComputerGuesserRandom implements IGuesser
 {
     private int min;
     private int max;
-    private Random rand = new Random();
+    private final static Random rand = new Random();
     private int guess;
 
     public void yourTurn()

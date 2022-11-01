@@ -85,6 +85,7 @@ public class GameCtrl
 	public static void main(String[] args)
 	{
 		IThinker thinker = chooseType("Thinker") == 1 ? new HumanThinker() : new ComputerThinker();
+		// could also change ComputerGuesser(); with ComputerGuesserRandom();
 		// IGuesser guesser = chooseType("Guesser") == 1 ? new HumanGuesser() : new ComputerGuesser();
 
 		// switch case for all the there guessers
@@ -105,7 +106,7 @@ public class GameCtrl
 				break;
 		}
 
-		GameCtrl gc = new GameCtrl(1, 100);
+		GameCtrl gc = new GameCtrl(0, 100);
 		gc.runGame(thinker, guesser);
 	}
 }
