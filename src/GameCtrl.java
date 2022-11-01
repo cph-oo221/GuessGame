@@ -6,6 +6,8 @@ public class GameCtrl
 	private final int min;
 	private final int max;
 
+	
+
 	public GameCtrl(int min, int max)
 	{
 		this.min = min;
