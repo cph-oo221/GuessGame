@@ -6,7 +6,6 @@ public class GameCtrl
 	private final int min;
 	private final int max;
 
-	
 
 	public GameCtrl(int min, int max)
 	{
@@ -86,6 +85,12 @@ public class GameCtrl
 
 	public static void main(String[] args)
 	{
+		FeatureOne featureOne = new FeatureOne();
+		MainFeature mainFeature = new MainFeature();
+		System.out.println(featureOne);
+		System.out.println(mainFeature);
+
+
 		IThinker thinker = chooseType("Thinker") == 1 ? new HumanThinker() : new ComputerThinker();
 		// could also change ComputerGuesser(); with ComputerGuesserRandom();
 		// IGuesser guesser = chooseType("Guesser") == 1 ? new HumanGuesser() : new ComputerGuesser();
